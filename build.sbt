@@ -8,7 +8,7 @@ lazy val root = (project in file("."))
     dockerConfig:_*
   )
   .settings(
-    name := "play3-exploration",
+    name := "playapp",
     libraryDependencies ++= Seq(
       guice,
       "org.scalatestplus.play"  %% "scalatestplus-play" % "7.0.0"     % Test,

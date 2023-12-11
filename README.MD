@@ -17,18 +17,18 @@ sbt performance/Gatling/test
 sbt docker:publishLocal
 ```
 ```shell
-docker stop play3-exploration
-docker run --rm --name play3-exploration -p 9000:9000 -d play3-exploration:1.0-SNAPSHOT
+docker stop playapp
+docker run --rm --name playapp -p 9000:9000 -d playapp:1.0-SNAPSHOT
 ```
 
 ```shell
  docker run -d -p 5000:5000 --name registry registry
 ```
 ```shell
-docker image tag play3-exploration:1.0-SNAPSHOT localhost:5000/play3-exploration
-docker push localhost:5000/play3-exploration:latest
+docker image tag playapp:1.0-SNAPSHOT localhost:5000/playapp
+docker push localhost:5000/playapp:latest
 ```
 ```shell
 docker stop play3-exploration
-docker run --rm --name play3-exploration -p 9000:9000 -d localhost:5000/play3-exploration:latest
+docker run --rm --name playapp -p 9000:9000 -d localhost:5000/playapp:latest
 ```
