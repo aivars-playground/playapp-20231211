@@ -11,6 +11,7 @@ lazy val root = (project in file("."))
     name := "playapp",
     libraryDependencies ++= Seq(
       guice,
+      "org.playframework"       %% "play-json"          % "3.0.1",
       "org.scalatestplus.play"  %% "scalatestplus-play" % "7.0.0"     % Test,
     )
   )
@@ -49,9 +50,10 @@ lazy val performance = project.in(file("performance"))
   )
 
 val dockerConfig = {
-  import scala.collection.Seq
-  import com.typesafe.sbt.packager.docker.{DockerChmodType, DockerPermissionStrategy}
   import com.typesafe.sbt.packager.docker.DockerPlugin.autoImport.dockerPermissionStrategy
+  import com.typesafe.sbt.packager.docker.{DockerChmodType, DockerPermissionStrategy}
+
+  import scala.collection.Seq
   Seq(
     dockerBaseImage := "openjdk:21",
     dockerChmodType := DockerChmodType.UserGroupWriteExecute,
