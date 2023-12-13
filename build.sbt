@@ -11,6 +11,7 @@ lazy val root = (project in file("."))
     name := "playapp",
     libraryDependencies ++= Seq(
       guice,
+      ws,
       "org.playframework"       %% "play-json"          % "3.0.1",
       "org.scalatestplus.play"  %% "scalatestplus-play" % "7.0.0"     % Test,
     )

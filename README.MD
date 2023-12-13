@@ -32,3 +32,8 @@ docker push localhost:5000/playapp:latest
 docker stop play3-exploration
 docker run --rm --name playapp -p 9000:9000 -d localhost:5000/playapp:latest
 ```
+
+```shell
+curl -v http://localhost:9000/return_hello/me
+curl -v http://localhost:9000/call_hello
+```
